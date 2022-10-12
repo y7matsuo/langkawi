@@ -13,7 +13,7 @@ class LoginController < ApplicationController
 
   def logout
     token = token_and_options(request).first
-    session.delete token
+    Session.erase token
     success_message
   end
 end
