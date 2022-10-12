@@ -18,6 +18,13 @@ class Session < ApplicationRecord
     end
   end
 
+  def self.erase(uuid)
+    session = Session.find_by(uuid: uuid)
+    if session.present? then
+      Session.delete(session.id)
+    end
+  end
+
   private
 
   def self.expiration
