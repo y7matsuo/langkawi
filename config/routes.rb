@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post "/graphql", to: "graphql#execute"
   scope :api do
     get '/health_check', to: 'system#health_check'
     
