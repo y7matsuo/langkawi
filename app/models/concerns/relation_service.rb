@@ -73,7 +73,7 @@ module RelationService
 
   def update_relation(owner_user_id, counter_user_id, status)
     relation = find_relation(owner_user_id, counter_user_id)
-    position_status = position_status(owner_user_id, relation)
+    position_status = resolve_relation_position_status(owner_user_id, relation)
 
     validate_update_param(position_status, status)
 
