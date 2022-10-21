@@ -1,5 +1,6 @@
 module Types
   class TalkType < Types::BaseObject
+    field :id, Int
     field :message, String
     field :submitter, Types::SubmitterCategory
     field :status, Types::EnabledCategory

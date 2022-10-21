@@ -2,6 +2,7 @@ module Types
   class RelationType < Types::BaseObject
     include RelationService
 
+    field :id, Int
     field :user, Types::UserType
     field :position_status, Types::RelationPositionCategory
     field :next_statuses, [Types::RelationCategory]
