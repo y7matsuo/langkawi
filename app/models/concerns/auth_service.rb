@@ -1,4 +1,5 @@
 module AuthService
+  
   def check_auth(context)
     user_id = Session.get(context[:token])
     context[:user] = user_id && User.find(user_id)

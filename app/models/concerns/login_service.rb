@@ -1,4 +1,5 @@
 module LoginService
+  
   def dologin(email, password)
     account = Account.eager_load(:user).where(email: email, password: password).first!
 
