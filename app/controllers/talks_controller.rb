@@ -25,7 +25,7 @@ class TalksController < ApplicationController
   def index_rooms
     talks = last_talks_condition(@user.id)
     resp = pager_response(talks) do |talk|
-      { relation: relation_response(talk.relation), last_talk: talk }
+      { relation: relation_response(@user.id, talk.relation), last_talk: talk }
     end
     render :json => resp
   end

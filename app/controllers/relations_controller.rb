@@ -10,7 +10,7 @@ class RelationsController < ApplicationController
     cond = user_item_condition(@user.id, position_status)
 
     resp = pager_response(cond.order(updated_at: :desc)) do |r|
-      relation_response(r)
+      relation_response(@user.id, r)
     end
     render :json => resp, include: :detail
   end
@@ -44,6 +44,6 @@ class RelationsController < ApplicationController
   private
 
   def render_relation_response(relation)
-    render :json => relation_response(relation), include: :detail
+    render :json => relation_response(@user.id, relation), include: :detail
   end
 end
